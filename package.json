@@ -108,5 +108,10 @@
     "react-infinite-scroller": {
       "react": "^19.2.3"
     }
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

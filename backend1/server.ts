@@ -2,7 +2,7 @@ import { user } from "@canva/app-middleware/express";
 import cors from "cors";
 import express from "express";
 import { createBaseServer } from "../utils/backend/base_backend/create";
-import { createImageRouter } from "./routers/image";
+import { createImageRouter } from "../backend1/routers/image";
 
 async function main() {
   const APP_ID = process.env.CANVA_APP_ID;

@@ -47,7 +47,7 @@
     "./scripts/**/*",
     "./declarations/declarations.d.ts",
     "./styles/**/*"
-  ],
+, "backend1/routers"  ],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"
