@@ -41,13 +41,13 @@
     }
   },
   "include": [
-    "./src/**/*",
-    "./backend/**/*",
-    "./utils/**/*",
-    "./scripts/**/*",
-    "./declarations/declarations.d.ts",
-    "./styles/**/*"
-, "backend1/routers"  ],
+  "./src/**/*",
+  "./backend/**/*",
+  "./utils/**/*",
+  "./scripts/**/*",
+  "./declarations/declarations.d.ts",
+  "./styles/**/*"
+],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"

@@ -2,7 +2,7 @@ import { user } from "@canva/app-middleware/express";
 import cors from "cors";
 import express from "express";
 import { createBaseServer } from "../utils/backend/base_backend/create";
-import { createImageRouter } from "../backend1/routers/image";
+import { createImageRouter } from "../backend/routers/image";
 
 async function main() {
   const APP_ID = process.env.CANVA_APP_ID;
@@ -23,7 +23,8 @@ async function main() {
         if (!origin) return callback(null, true);
 
         if (
-         origin === process.env.CANVA_APP_ORIGIN
+          origin.includes("canva-apps.com") ||
+          origin.includes("localhost")
         ) {
           return callback(null, true);
         }
@@ -54,10 +55,7 @@ async function main() {
   const server = createBaseServer(router);
 
   // 🚀 Backend runs on 3001 (from .env)
- const PORT = process.env.PORT || "3001";
-server.start(PORT);
-
-console.log(`✅ Backend running on port ${PORT}`);
+  server.start(process.env.CANVA_BACKEND_PORT || "3001");
 
   console.log("✅ Backend running on port 3001");
 }
