@@ -23,8 +23,7 @@ async function main() {
         if (!origin) return callback(null, true);
 
         if (
-          origin.includes("canva-apps.com") ||
-          origin.includes("localhost")
+         origin === process.env.CANVA_APP_ORIGIN
         ) {
           return callback(null, true);
         }
@@ -55,7 +54,10 @@ async function main() {
   const server = createBaseServer(router);
 
   // 🚀 Backend runs on 3001 (from .env)
-  server.start(process.env.CANVA_BACKEND_PORT || "3001");
+ const PORT = process.env.PORT || "3001";
+server.start(PORT);
+
+console.log(`✅ Backend running on port ${PORT}`);
 
   console.log("✅ Backend running on port 3001");
 }
